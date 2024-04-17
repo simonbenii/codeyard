@@ -2,7 +2,7 @@
   flex: 1;
   position: relative;
   overflow: hidden;
-  background-image: url('../../assets/rightDivBackground.jpg');
+  background-image: url('../../assets/rightDivBackground.jpeg');
   background-size: cover;
   background-position: center;
 }
@@ -42,7 +42,7 @@ h2 {
 /* AppleSystemUlFont / 14 px / 30 px Leading / #FFFFFF */
 h4 {
   margin: 0 20% 20px;
-  font-family: 'AppleSystemUlFont';
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
   font-weight: 100;
   font-size: 14px;
   line-height: 30px;
@@ -50,10 +50,10 @@ h4 {
 }
 
 /* OpenSans-Semibold / 14 px / 30 px Leading / #FFFFFF */
-button {
+.logIn {
   margin: 0 20% 0;
   width: 100px;
-  height: 35px;
+  height: 40px;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 30px;
@@ -64,6 +64,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.logIn:hover {
   background-color: #ffffff15;
 }
