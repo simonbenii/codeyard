@@ -1,0 +1,69 @@
+.rightDivBg {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-image: url('../../assets/rightDivBackground.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.rightDivBg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.rightDiv {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+img {
+  margin: 0 20% 20px;
+}
+
+/* OpenSans-Semibold / 30 px / 44 px Leading / #FFFFFF */
+h2 {
+  margin: 0 20% 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  line-height: 44px;
+  color: #FFFFFF;
+}
+
+/* AppleSystemUlFont / 14 px / 30 px Leading / #FFFFFF */
+h4 {
+  margin: 0 20% 20px;
+  font-family: 'AppleSystemUlFont';
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+
+/* OpenSans-Semibold / 14 px / 30 px Leading / #FFFFFF */
+button {
+  margin: 0 20% 0;
+  width: 100px;
+  height: 35px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 30px;
+  color: #FFFFFF;
+  background: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffffff15;
+}
