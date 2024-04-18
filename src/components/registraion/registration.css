@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 /* OpenSans-Semibold / 30 px / 30 px Leading / #757575 */
@@ -86,38 +86,6 @@ h6 {
   width: 100%;
 
 
-}
-
-.circle {
-  display: flex;
-  width: 4px;
-  height: 4px;
-  background-color: #BEBEBE;
-  border-radius: 50%;
-  position: absolute;
-  transform: translateY(-50%);
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.weak {
-  background-color: #CD4146;
-}
-
-.okay {
-  background-color: #F9C466;
-}
-
-.good {
-  background-color: #4A90E2;
-}
-
-.strong {
-  background-color: #0A96A3;
-}
-
-.remove {
-  background-color: #BEBEBE;
 }
 
 .remember {
@@ -199,4 +167,14 @@ p {
   font-size: 12px;
   line-height: 17px;
   color: #A1A1A1;
+}
+
+.more {
+  font-size: 25px;
+}
+
+.error {
+  width: 80%;
+  margin: -10px 0px 20px;
+  color: #cd4147;
 }

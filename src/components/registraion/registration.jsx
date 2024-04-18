@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './registration.css';
 import TextField from '@mui/material/TextField';
-import PasswordStrengthBar from 'react-password-strength-bar';
+import PasswordStrengthMeter from "../passwordStrengthMeter/passwordStrengthMeter";
 import see from "../../assets/see.png";
 import hidden from "../../assets/hidden.png";
 
 function Registration() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [shortScoreWord, setShortScoreWord] = useState('short');
   const [email, setEmail] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState("");
+  const [shortScoreWord, setShortScoreWord] = useState("");
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -24,42 +25,40 @@ function Registration() {
     setShowPassword(!showPassword);
   };
 
-  const isPasswordStrongEnough = shortScoreWord === 'okay' || shortScoreWord === 'good' || shortScoreWord === 'strong';
   const isEmailValid = /\S+@\S+\.\S+/.test(email);
 
   const handleSignUp = () => {
-    if (isPasswordStrongEnough && isEmailValid) {
-      console.log("successful login");
-    } else {
-      console.log("Email format or password strength not good");
+    if (!isEmailValid) {
+      setError("Please enter a valid email address.");
+      return;
     }
-  };
 
-  const onChangeScore = (score) => {
-    switch (score) {
-      case 0:
-        setShortScoreWord('short');
-        break;
-      case 1:
-        setShortScoreWord('weak');
-        break;
-      case 2:
-        setShortScoreWord('okay');
-        break;
-      case 3:
-        setShortScoreWord('good');
-        break;
-      case 4:
-        setShortScoreWord('strong');
-        break;
-      default:
-        setShortScoreWord('short');
-        break;
+    if (shortScoreWord !== 'good' && shortScoreWord !== 'strong') {
+      setError("Please choose a stronger password.");
+      return;
     }
+
+    const userData = {
+      id: Math.random().toString(36).substr(2, 9),
+      email: email,
+      password: password,
+      timestamp: new Date().toISOString()
+    };
+
+    setEmail('');
+    setPassword('');
+    setRememberMe(false);
+    setError('');
+
+    console.log("User data:", userData);
   };
 
   const handleRememberMeChange = () => {
     setRememberMe(!rememberMe);
+  };
+
+  const handleShortScoreChange = (score) => {
+    setShortScoreWord(score);
   };
 
   return (
@@ -90,42 +89,9 @@ function Registration() {
               className="showPasswordIcon"
               onClick={togglePasswordVisibility}
             />
-            <div className={`circle 
-              ${shortScoreWord === 'strong' ? 'strong' : ''}
-              ${shortScoreWord === 'good' ? 'remove' : ''}
-              ${shortScoreWord === 'okay' ? 'remove' : ''}
-              ${shortScoreWord === 'weak' ? 'remove' : ''}
-              `} style={{ right: '0px', top: '35%' }}>
-            </div>
-
-            <div className={`circle 
-              ${shortScoreWord === 'strong' ? 'good' : ''}
-              ${shortScoreWord === 'good' ? 'good' : ''}
-              ${shortScoreWord === 'okay' ? 'remove' : ''}
-              ${shortScoreWord === 'weak' ? 'remove' : ''}
-              `} style={{ right: '0px', top: '50%' }}>
-            </div>
-
-            <div className={`circle 
-              ${shortScoreWord === 'strong' ? 'okay' : ''}
-              ${shortScoreWord === 'good' ? 'okay' : ''}
-              ${shortScoreWord === 'okay' ? 'okay' : ''}
-              ${shortScoreWord === 'weak' ? 'remove' : ''}
-              `} style={{ right: '0px', top: '65%' }}>
-            </div>
-
-            <div className={`circle
-              ${shortScoreWord === 'strong' ? 'weak' : ''}
-              ${shortScoreWord === 'good' ? 'weak' : ''}
-              ${shortScoreWord === 'okay' ? 'weak' : ''}
-              ${shortScoreWord === 'weak' ? 'weak' : ''}
-              `} style={{ right: '0px', top: '80%' }}>
-            </div>
-
+            <PasswordStrengthMeter password={password} onShortScoreChange={handleShortScoreChange} />
           </div>
-          <div style={{ display: 'none' }}>
-            <PasswordStrengthBar password={password} onChangeScore={onChangeScore} />
-          </div>
+          {error && <p className="error">{error}</p>}
         </div>
         <div className='remember'>
           <input type="checkbox" className="checkbox-round" checked={rememberMe} onChange={handleRememberMeChange} />
