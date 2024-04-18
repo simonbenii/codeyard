@@ -70,7 +70,13 @@ function Registration() {
             <h6>Create your account by filling the form below.</h6>
           </div>
           <div className='emailContainer'>
-            <TextField id="email" label="Email" variant="standard" type='email' value={email} onChange={handleEmailChange} />
+            <TextField
+              id="email"
+              label="Email"
+              variant="standard"
+              style={{ width: '100%' }}
+              type='email' value={email} onChange={handleEmailChange}
+            />
           </div>
           <div className="passwordContainer">
             <TextField
@@ -79,6 +85,7 @@ function Registration() {
               variant="standard"
               type={showPassword ? 'text' : 'password'}
               value={password}
+              style={{ width: '100%' }}
               onChange={(e) => {
                 handlePasswordChange(e);
               }}
