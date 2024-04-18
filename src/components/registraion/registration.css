@@ -17,7 +17,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-bottom: 40px;
 }
 
 /* OpenSans-Semibold / 30 px / 30 px Leading / #757575 */
@@ -135,8 +134,15 @@ h5 {
 }
 
 .footer {
-  width: 60%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10%;
 }
 
 /* AppleSystemUlFont / 12 px/ 15 px Leading / #A1A1A1 */
