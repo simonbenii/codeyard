@@ -67,3 +67,33 @@ h4 {
 .logIn:hover {
   background-color: #ffffff15;
 }
+
+@media screen and (max-width: 768px) {
+  .rightDiv {
+    height: 50vh;
+    width: 100%;
+  }
+
+  img {
+    margin: 0 10% 20px;
+  }
+
+  h2 {
+    margin: 0 10% 10px;
+    font-size: 20px;
+    line-height: 33px;
+  }
+
+  h4 {
+    margin: 0 10% 10px;
+    font-size: 12px;
+    line-height: 25px;
+  }
+
+  .logIn {
+    margin: 0px 65% 0;
+    width: 80px;
+    height: 35px;
+    font-size: 14px;
+}
+}
