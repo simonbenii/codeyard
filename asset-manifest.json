@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/codeyard/static/css/main.3a9eaf80.css",
+    "main.css": "/codeyard/static/css/main.eb98ba71.css",
     "main.js": "/codeyard/static/js/main.8db2e6dc.js",
     "static/media/rightDivBackground.jpeg": "/codeyard/static/media/rightDivBackground.245a316b0efab3f58c1e.jpeg",
     "index.html": "/index.html",
-    "main.3a9eaf80.css.map": "/codeyard/static/css/main.3a9eaf80.css.map",
+    "main.eb98ba71.css.map": "/codeyard/static/css/main.eb98ba71.css.map",
     "main.8db2e6dc.js.map": "/codeyard/static/js/main.8db2e6dc.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a9eaf80.css",
+    "static/css/main.eb98ba71.css",
     "static/js/main.8db2e6dc.js"
   ]
 }
